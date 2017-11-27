@@ -1,0 +1,18 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: hdcommon-userservice-consumer
+  cloud:
+    inetutils:
+      preferred-networks:
+      - 172.168
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:holdtime5350606@peer1:8761/eureka/,http://admin:holdtime5350606@peer2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+feign:
+  hystrix:
+    enabled: true
